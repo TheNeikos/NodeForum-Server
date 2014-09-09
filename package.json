@@ -4,7 +4,7 @@
   "description": "A Community Platform in NodeJS",
   "main": "app.js",
   "scripts": {
-    "test": "node_modules/.bin/mocha"
+    "test": "node_modules/.bin/mocha app/tests"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,14 @@
   "bugs": {
     "url": "https://github.com/theneikos/NodeForum-Server/issues"
   },
-  "homepage": "https://github.com/theneikos/NodeForum-Server"
+  "homepage": "https://github.com/theneikos/NodeForum-Server",
+  "devDependencies": {
+    "mocha": "^1.21.4",
+    "should": "^4.0.4"
+  },
+  "dependencies": {
+    "express": "^4.9.0",
+    "lodash": "^2.4.1",
+    "mongoose": "^3.8.16"
+  }
 }
