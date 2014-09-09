@@ -1,0 +1,19 @@
+{
+  "name": "NodeForum-Server",
+  "version": "0.0.1",
+  "description": "A Community Platform in NodeJS",
+  "main": "app.js",
+  "scripts": {
+    "test": "node_modules/.bin/mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/theneikos/NodeForum-Server"
+  },
+  "author": "Marcel Mueller <marcel-muller@hotmail.com>",
+  "license": "To Be Determined",
+  "bugs": {
+    "url": "https://github.com/theneikos/NodeForum-Server/issues"
+  },
+  "homepage": "https://github.com/theneikos/NodeForum-Server"
+}
