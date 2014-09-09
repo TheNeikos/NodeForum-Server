@@ -1,5 +1,5 @@
 
-var init = require('.config/init')(),
+var init = require('./config/init')(),
     config = require('./config/config'),
     mongoose = require('mongoose'),
     colors = require('colors');
@@ -18,6 +18,6 @@ app.listen(config.port);
 
 exports = module.exports = app;
 
-console.log('NodeForum ', '(V '+config.version+')'.grey ,
-            ' application started on port ' + config.port);
+console.log('NodeForum'.green, '('+config.version.grey+')' ,
+            'application started on port ' + config.port);
 
