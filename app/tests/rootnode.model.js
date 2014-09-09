@@ -23,6 +23,18 @@ describe('RootNode Model:', function() {
         });
     });
 
+    describe('Method Unique', function() {
+        it('should exist only one RootNode', function(done) {
+            root_node.save(function(err) {
+                should.not.exist(err);
+                new RootNode().save(function(err2) {
+                    shouldd.exist(error);
+                    done();
+                });
+            });
+        });
+    });
+
     afterEach(function(done) {
         root_node.remove().exec();
         done();
