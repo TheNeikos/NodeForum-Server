@@ -27,6 +27,14 @@ describe('BaseNode Model:', function() {
                 done();
             });
         });
+
+        it('should be able to show an error when trying to save without a parent', function(done) {
+            simple_node.parent = '';
+            simple_node.save(function(err) {
+                should.exist(err);
+                done();
+            });
+        });
     });
 
     afterEach(function(done) {
