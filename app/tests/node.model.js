@@ -39,6 +39,7 @@ describe('BaseNode Model:', function() {
 
     afterEach(function(done) {
         root_node.remove().exec();
+        simple_node.remove().exec();
         done();
     });
 });
