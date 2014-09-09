@@ -14,6 +14,15 @@ describe('RootNode Model:', function() {
         done();
     });
 
+    describe('Method Save', function() {
+        it('should be able to save', function(done) {
+            root_node.save(function(err) {
+                should.not.exist(err);
+                done();
+            });
+        });
+    });
+
     afterEach(function(done) {
         root_node.remove().exec();
         done();
