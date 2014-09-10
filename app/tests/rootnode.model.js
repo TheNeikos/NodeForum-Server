@@ -11,7 +11,7 @@ var root_node;
 describe('RootNode Model:', function() {
     beforeEach(function(done) {
         root_node = new RootNode();
-        done();
+        mongoose.connection.db.dropDatabase(done);
     });
 
     describe('Method Save', function() {
@@ -28,7 +28,7 @@ describe('RootNode Model:', function() {
             root_node.save(function(err) {
                 should.not.exist(err);
                 new RootNode().save(function(err2) {
-                    shouldd.exist(error);
+                    should.exist(err2);
                     done();
                 });
             });
@@ -36,7 +36,7 @@ describe('RootNode Model:', function() {
     });
 
     afterEach(function(done) {
-        root_node.remove().exec();
+        root_node.remove();
         done();
     });
 });
