@@ -64,6 +64,30 @@ describe('User Model:', function() {
         });
     });
 
+    describe('User Login', function() {
+        it('should be able to login with password and email', function(done) {
+            thomas.save(function(err, tho) {
+                should.not.exist(err);
+                User.login(tho.email, "hackitall", function(err, user) {
+                    should.not.exist(err);
+                    (tho.id == user.id).should.be.true;
+                    done();
+                });
+            });
+        });
+
+        it('should not be able to login with wrong password/email', function(done) {
+            thomas.save(function(err, tho) {
+                should.not.exist(err);
+                User.login(tho.email, "hacll", function(err, user) {
+                    should.exist(err);
+                    (tho === user).should.be.false;
+                    done();
+                });
+            });
+        });
+    });
+
     afterEach(function(done) {
         root_node.remove();
         thomas.remove();
