@@ -16,7 +16,7 @@ module.exports = function(db) {
 
     var modelFiles = fs.readdirSync('./app/models');
     modelFiles.forEach(function(modelPath) {
-        require(path.resolve(modelPath));
+        require(path.resolve('./app/models', modelPath));
     });
 
     app.locals.title = config.app.title;

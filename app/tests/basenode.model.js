@@ -9,12 +9,16 @@ var should = require('should'),
 
 var root_node, simple_node;
 
+before(clearDB);
+
 describe('BaseNode Model:', function() {
+
     beforeEach(function(done) {
         root_node = new RootNode();
-        root_node.save(function() {
+        root_node.save(function(err, node) {
+            should.not.exist(err);
             simple_node = new BaseNode({
-                parent: root_node
+                parent: root_node.id
             });
             done();
         });
@@ -38,8 +42,8 @@ describe('BaseNode Model:', function() {
     });
 
     afterEach(function(done) {
-        root_node.remove().exec();
-        simple_node.remove().exec();
+        root_node.remove();
+        simple_node.remove();
         done();
     });
 });

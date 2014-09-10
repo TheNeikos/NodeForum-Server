@@ -4,7 +4,7 @@
   "description": "A Community Platform in NodeJS",
   "main": "app.js",
   "scripts": {
-    "test": "node_modules/.bin/mocha app/tests"
+    "test": "node_modules/.bin/mocha --require './app/tests/mocha.conf' app/tests "
   },
   "repository": {
     "type": "git",
