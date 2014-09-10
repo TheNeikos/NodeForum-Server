@@ -1,0 +1,10 @@
+services:
+    - mongodb
+
+
+language: node_js
+node_js:
+    - "0.10"
+before_script:
+    - sleep 15
+script: "npm test"
