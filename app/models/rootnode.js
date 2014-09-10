@@ -18,6 +18,7 @@ RootNodeSchema.pre('save', true, function(next, done) {
             return;
         }
         next();
+        done();
     });
 });
 
