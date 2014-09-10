@@ -70,7 +70,7 @@ describe('User Model:', function() {
                 should.not.exist(err);
                 User.login(tho.email, "hackitall", function(err, user) {
                     should.not.exist(err);
-                    (tho === user).should.be.true;
+                    (tho.id == user.id).should.be.true;
                     done();
                 });
             });
