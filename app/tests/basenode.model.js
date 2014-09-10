@@ -39,6 +39,22 @@ describe('BaseNode Model:', function() {
                 done();
             });
         });
+
+        it('should be able to tell when it was created', function(done) {
+            simple_node.save(function(err, node) {
+                should.not.exist(err);
+                node.should.have.property('created_at');
+                done();
+            });
+        });
+
+        it('should be able to tell when it was last updated', function(done) {
+            simple_node.save(function(err, node) {
+                should.not.exist(err);
+                node.should.have.property('updated_at');
+                done();
+            });
+        });
     });
 
     afterEach(function(done) {
