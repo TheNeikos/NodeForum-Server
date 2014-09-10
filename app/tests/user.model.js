@@ -50,6 +50,7 @@ describe('User Model:', function() {
         });
 
         it('should be able to update the password', function(done) {
+            this.slow(200);
             thomas.password = "hackitall";
             thomas.save(function(err, tho) {
                 should.not.exist(err);
@@ -65,7 +66,7 @@ describe('User Model:', function() {
 
     afterEach(function(done) {
         root_node.remove();
-        simple_node.remove();
+        thomas.remove();
         done();
     });
 });
